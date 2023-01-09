@@ -1,0 +1,37 @@
+{
+    "description": "<p>沒有錯，又是組合！</p><p>給予 n 個字串及數字 k，請將所有可能的組合列出來。</p><p>例如：給予 <code>n = 5</code>, <code>k = 2</code>，以及 <code>andy becky cindy jacky willy</code> 五個字串，</p><p>代表從 5 個字串中挑選 2 個出來，注意，須根據字串給予時的順序組合進行列印。詳細請見範例。</p><hr><p></p><p>Yah, Combination Again!</p><p>Given n strings and number k, please print all possible combinations out.</p><p>For example, given <code>n = 5</code>, <code>k = 2</code>, and <code>andy becky cindy jacky willy</code> five strings,</p><p>which means that you have to choose 2 strings from the 5 strings.</p><p>Notice that you need print out them according to the given order. See examples.</p>",
+    "inputFormat": "輸入第一行為 n 跟 k，第二行有 n 個字串（以空格分開）。\n1 <= n <= 20，且每個字串不超過十個字。\n\nPrint out k strings from the n strings, according to the given order in the input.",
+    "outputFormat": "印出 n 個字串取 k 個的結果，須根據字串給予時的順序組合進行列印。\n\nPrint out k strings from the n strings, according to the given order in the input.",
+    "level": "Hard",
+    "chapter": {
+        "type": "Exam",
+        "index": "final-2021"
+    },
+    "tags": [
+        "String",
+        "Recursive"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 65536,
+    "coinReward": 0,
+    "loaderCode": "",
+    "templateCode": "#include<stdio.h>\n\nint main () {\n    return 0;\n}\n",
+    "title": "[20 Points] String Combination",
+    "date": "2022-01-12T11:15:30.302Z",
+    "samples": [
+        {
+            "inputData": "5 2\nandy becky cindy jacky willy",
+            "outputData": "andy becky \nandy cindy \nandy jacky \nandy willy \nbecky cindy \nbecky jacky \nbecky willy \ncindy jacky \ncindy willy \njacky willy \n"
+        },
+        {
+            "inputData": "5 3\nandy becky cindy jacky willy",
+            "outputData": "andy becky cindy \nandy becky jacky \nandy becky willy \nandy cindy jacky \nandy cindy willy \nandy jacky willy \nbecky cindy jacky \nbecky cindy willy \nbecky jacky willy \ncindy jacky willy \n"
+        },
+        {
+            "inputData": "8 1\nandy becky cindy jacky larry mandy sandy willy",
+            "outputData": "andy \nbecky \ncindy \njacky \nlarry \nmandy \nsandy \nwilly \n"
+        }
+    ],
+    "id": "gXJCaTAAtOKq"
+}

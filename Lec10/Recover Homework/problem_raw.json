@@ -1,0 +1,34 @@
+{
+    "description": "<p>It’s no secret that how annoying the cat is.<br>One day, Amy just forgot to turn off her computer after she finished her homework, which gave her pet cat an opportunity to ruin her homework.</p><p>We have already known that a valid homework should fulfill following restrictions:</p><ul><li><p>Each word contains only alphabets, that is <code>a-z</code> and <code>A-Z</code>.</p></li><li><p>Only four punctuations, <code>.</code>, <code>,</code>, <code>!</code> and <code>?</code> may appear right after a word and should not appear alone.</p></li><li><p>The length of each word (including punctuation) should be with in range <code>1 ~ 21</code>.</p></li><li><p>The words are seperated by a whitespace.</p></li></ul><p>Any pattern that violates above restrictions is produced by Amy’s pet cat, which should be removed. </p><p>Please implement a program to help Amy safe her homework.</p><p></p><hr><p></p><p>眾所皆知，貓咪是機車的生物。<br>Amy 寫完作業後電腦忘記關，一回過神，發現在鍵盤上面踏踏的貓咪。</p><p>一篇正常的作業內會有以下的特徵：</p><ul><li><p>詞彙由 <code>a-z</code> <code>A-Z</code> 所組成</p></li><li><p>正常文章中會出現 <code>.</code> <code>,</code> <code>!</code> <code>?</code> 四種標點符號，位於詞彙的最後方，且不該單獨出現</p></li><li><p>每個詞彙的長度介於 <code>1 ~ 21</code> 個字元之間 (長度含標點符號)</p></li><li><p>每個詞彙由一個空白隔開</p></li></ul><p>只要不符合上方要求，都是貓咪新增的產物，需要被刪除。<br>請你寫一份程式碼，幫助 Amy 復原她的作業</p>",
+    "inputFormat": "A string with length 1 ~ 4096 .",
+    "outputFormat": "The recovered homework.",
+    "level": "Medium",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec10"
+    },
+    "tags": [
+        "Loop",
+        "If/else",
+        "String"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>\r\n#include <string.h>\r\n#include <ctype.h>\r\n\r\n#define MAX_LEN 4096\r\n\r\nvoid recovery(char *homework);\r\n\r\nint main () {\r\n    char homework[MAX_LEN + 1];\r\n    \r\n    // Get the homework content.\r\n    fgets(homework, MAX_LEN , stdin);\r\n    recovery(homework);\r\n\r\n    // Print the recovered homework.\r\n    fputs(homework, stdout);\r\n\r\n    return 0;\r\n}",
+    "templateCode": "void recovery(char *homework) {\r\n\r\n}",
+    "title": "Recover Homework",
+    "date": "2022-11-22T08:37:02.527Z",
+    "samples": [
+        {
+            "inputData": "Hello jahshd@ World.",
+            "outputData": "Hello World."
+        },
+        {
+            "inputData": "Umm, C is the asdfasdfae@ best !!!@@@ujdjdasfasdfasdfas programming language?",
+            "outputData": "Umm, C is the best programming language?"
+        }
+    ],
+    "id": "Bm-z4Lva4-8I"
+}

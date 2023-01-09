@@ -1,0 +1,36 @@
+{
+    "description": "<p>We have learned how to calculate the Fibonacci sequence with recursive technique, but there are disadvantages while calculating the sequence with the orginal definition of Fibonacci: <code>fib(k) = fib(k - 1) + fib(k - 2)</code>. Firstly, it takes long time to get the result with large <code>k</code>. Secondly, there are lots of numbers being recalculated.</p><p>To avoid such disadvantages, a technique called fast doubling was introduced to calculate Fibonacci sequence. As the name of the technique implies, there exists a recursive formula to get <code>fib(2k)</code> and <code>fib(2k + 1)</code> from <code>fib(k)</code> and <code>fib(k + 1)</code>, here are the formula:</p><pre><code>fib(2k) = fib(k) * [2 * fib(k + 1) - fib(k)]\nfib(2k + 1) = fib(k) * fib(k) + fib(k + 1) * fib(k + 1)\n\nwhere fib(1) = fib(2) = 1</code></pre><p>With the formula, the <code>fib(k)</code> could be calculated instantly as well as occupies little amount of memory. with the following loader code, please implement the function <code>fib_fast_doubling()</code>.</p>",
+    "inputFormat": "An integer k with in range 1 ~ 93.",
+    "outputFormat": "The value of fib(k).",
+    "level": "Hard",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec08"
+    },
+    "tags": [
+        "Expression",
+        "If/else",
+        "Function",
+        "Recursive",
+        "Pointers"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>\r\n\r\ntypedef unsigned long long uint64_t;\r\n\r\nvoid fib_fast_doubling(unsigned k, uint64_t *f2k, uint64_t *f2k1);\r\n\r\nint main()\r\n{\r\n    unsigned k;\r\n    scanf(\"%u\", &k);\r\n\r\n    uint64_t f2k, f2k1;\r\n    fib_fast_doubling(k / 2, &f2k, &f2k1);\r\n\r\n    printf(\"%llu\", (k & 0x1) ? f2k1 : f2k);\r\n\r\n    return 0;\r\n}",
+    "templateCode": "void fib_fast_doubling(unsigned k, uint64_t *f2k, uint64_t *f2k1)\r\n{\r\n\r\n}",
+    "title": "Fibonacci with Fast Doubling",
+    "date": "2022-10-31T06:43:02.951Z",
+    "samples": [
+        {
+            "inputData": "2",
+            "outputData": "1\n"
+        },
+        {
+            "inputData": "9",
+            "outputData": "34\n"
+        }
+    ],
+    "id": "IMOqVJ4IP9el"
+}

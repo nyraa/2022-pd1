@@ -1,0 +1,34 @@
+{
+    "description": "<p>Taiwan had just hold the local government election that aims to decide the mayor, the councilor and the village chief of each city and village. The election was held in 26th November, 2022, starts from a.m. 8:00 to p.m. 4:00. After that, the ballots must be counted carefully, which usually takes quite a long time, please implement a program to help counting the ballots.</p>",
+    "inputFormat": "The first line contains an integer N that indicates the number of candidates. Where 1 < N <= 20.\r\nThe next line contains N candidates' names.\r\nThe rest of lines, ended by EOF, contains a name of a candidate which represents a ballot that voted to the candidate. There will be at most 10000 lines.",
+    "outputFormat": "The name of each candidate followed by his/her votes earned in the election, each candidate occupies an independent line. Finally, the last line contains the winner of the election. There is guaranteed to be only one winner.",
+    "level": "Easy",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec11"
+    },
+    "tags": [
+        "Array",
+        "String",
+        "Struct"
+    ],
+    "hint": "An EOF could be generated via pressing Ctrl-D on Unix like system (include MacOS), and Ctrl-Z on Windows.",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>                                  \r\n#include <string.h>                                                                                                                                                                          \r\n\r\n#define MAX_CAND_CNT 20\r\n#define MAX_NAME_LEN 32\r\nstruct ballot_counter_s {\r\n    int count;\r\n    char name[MAX_NAME_LEN];\r\n} counter[MAX_CAND_CNT];\r\nint cand_cnt;\r\n\r\nvoid count(const char *name);\r\nconst char *winner();\r\n\r\nint main()\r\n{\r\n    scanf(\"%d\", &cand_cnt);\r\n    for (int i = 0; i < cand_cnt; i++) {\r\n        scanf(\"%s\", counter[i].name);\r\n        counter[i].count = 0;\r\n    }\r\n\r\n    char name[MAX_NAME_LEN];\r\n    while (scanf(\"%s\", name) != EOF)\r\n        count(name);\r\n\r\n    for (int i = 0; i < cand_cnt; i++)\r\n        printf(\"%s %d\\n\", counter[i].name, counter[i].count);\r\n\r\n    printf(\"%s\\n\", winner());\r\n\r\n    return 0;\r\n}",
+    "templateCode": "void count(const char *name)\r\n{\r\n\r\n}\r\n\r\nconst char *winner()\r\n{\r\n\r\n}",
+    "title": "Ballot Counter",
+    "date": "2022-11-30T03:04:09.984Z",
+    "samples": [
+        {
+            "inputData": "2\nJonathan Jesse \nJonathan\nJesse\nJesse\nJesse\nJesse\nJesse\nJesse\nJonathan\nJonathan\nJonathan\nJonathan\nJesse\nJesse\nJesse\nJonathan\nJesse\nJesse\nJonathan\nJesse\nJonathan\nJesse\nJonathan\nJonathan\nJonathan\nJesse\nJesse\n",
+            "outputData": "Jonathan 11\nJesse 15\nJesse\n"
+        },
+        {
+            "inputData": "3\nAlexander Bryan Victoria \nAlexander\nBryan\nVictoria\nAlexander\nAlexander\nBryan\nBryan\nBryan\nAlexander\nVictoria\nVictoria\nBryan\nVictoria\nAlexander\nVictoria\nBryan\nAlexander\nVictoria\nVictoria\nVictoria\n",
+            "outputData": "Alexander 6\nBryan 6\nVictoria 8\nVictoria\n"
+        }
+    ],
+    "id": "nVlKtT09rF0X"
+}

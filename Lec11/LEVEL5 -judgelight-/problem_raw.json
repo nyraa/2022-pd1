@@ -1,0 +1,30 @@
+{
+    "description": "<p>Given an array of <code>struct ESPer</code> which contains <code>level</code> and <code>name</code>,</p><p>please sort this array in ascending order by level.</p><p>hint: You can use C standard library's <code>qsort</code> function:</p><p></p><p>學園都市是個進行超能力開發的機關，會定期對學生進行能力檢測</p><p>他們使用的資料結構包含兩個欄位：<code>level</code> 和 <code>name</code></p><p>請你寫一個 function 來對包含這個 struct 的陣列做排序</p><p>hint: 你可以使用內建的 <code>qsort</code></p><p><a rel=\"noopener noreferrer nofollow\" href=\"https://youtu.be/EGmLt7mYSo4\">https://youtu.be/EGmLt7mYSo4</a></p>",
+    "inputFormat": "An array of \"struct ESPer\", array length",
+    "outputFormat": "sort the array in ascending order by level.",
+    "level": "Medium",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec11"
+    },
+    "tags": [
+        "Pointers",
+        "Function",
+        "Struct"
+    ],
+    "timeLimit": 1,
+    "memLimit": 65535,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>\n#include <stdlib.h>\n\nstruct ESPer {\n    char name[64];\n    int level;\n};\n\nint cmp(const void *a, const void *b);\nvoid sort_level(struct ESPer *arr, int length);\n\nint main()\n{\n    int n;\n    struct ESPer tokiwadai[100];\n\n    scanf(\"%d\", &n);\n    for(int i = 0; i < n; ++i) {\n        scanf(\"%d %s\", &(tokiwadai[i].level), tokiwadai[i].name);\n    }\n\n    sort_level(tokiwadai, n);\n\n    for(int i = 0;i < n;++i) {\n        printf(\"%d %s\\n\", tokiwadai[i].level, tokiwadai[i].name);\n    }\n\n    return 0;\n}",
+    "templateCode": "int cmp(const void *a, const void *b) {\r\n\r\n}\r\n\r\nvoid sort_level(struct ESPer *arr, int length) {\r\n    qsort(...);\r\n}\r\n",
+    "title": "LEVEL5 -judgelight-",
+    "date": "2020-12-22T08:33:07.124Z",
+    "hint": "",
+    "samples": [
+        {
+            "inputData": "5\n6 NanjoYoshino\n5 MisakaMikoto\n0 SatenRuiko\n1 UiharuKazari\n4 ShiraiKuroko\n",
+            "outputData": "0 SatenRuiko\n1 UiharuKazari\n4 ShiraiKuroko\n5 MisakaMikoto\n6 NanjoYoshino\n"
+        }
+    ],
+    "id": "pquqeIYmp3yU"
+}

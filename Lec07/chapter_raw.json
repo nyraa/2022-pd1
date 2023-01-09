@@ -1,0 +1,14 @@
+{
+    "review": "<ul><li><p>A function is <strong>recursive</strong> if <strong>it calls itself</strong>.</p><pre><code>void func(){\n    func();\n}\n// This function will keep calling itself until stack overflow.</code></pre></li><li><p>Recursion arises <strong>divide-and-conquer</strong> technique: a large problem is divided into smaller pieces that are tackled by the same algorithm.</p></li><li><p>All recursive functions need some kind of <strong>termination condition</strong> in order to prevent infinite recursion <strong>(important!!!)</strong>.</p><pre><code>void func(){\n      if (termination_condition) return;\n      func();\n}\n// This function will keep calling itself until termination_condition is true.</code></pre></li></ul>",
+    "videoUrl": "https://www.youtube.com/embed/iM4kuPf-WsY",
+    "makeUpTime": "2022-11-16T16:00:00.000Z",
+    "notification": {
+        "makeUpTime": "IwUG5wCCH-srrKXYum1_"
+    },
+    "startTime": "2022-10-26T16:00:00.000Z",
+    "dueTime": "2022-11-23T16:00:00.000Z",
+    "sections": [],
+    "type": "Homework",
+    "index": "Lec07",
+    "title": "Recursion"
+}

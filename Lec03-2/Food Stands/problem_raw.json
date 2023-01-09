@@ -1,0 +1,32 @@
+{
+    "description": "<p>Amy loves Taiwan traditional snacks in night market!</p><p>To shop efficiently, she lists the location of each food stand.</p><p>Following is her food stands cheat sheat:</p><p><code>13 25 8</code></p><p>Which means the positions of the food stands from the entrance are <code>13</code>, <code>25</code> and <code>8</code> meters.</p><p>Take the list as an example, Amy can start from <code>8</code>, go through <code>13</code> and finish the shopping at <code>25</code>.</p><p>Please help Amy to calculate the <strong>shortest distance</strong> she should walk to buy all the willing snacks.</p>",
+    "inputFormat": "An sequence of numbers end with -1.\r\nRange of the number is 1 ~ 2147483647",
+    "outputFormat": "A single number that indicates the shortest distance.",
+    "level": "Easy",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec03-2"
+    },
+    "tags": [
+        "Loop"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "",
+    "templateCode": "#include<stdio.h>\r\n\r\nint main () {\r\n    return 0;\r\n}\r\n",
+    "title": "Food Stands",
+    "date": "2022-09-25T14:57:05.546Z",
+    "samples": [
+        {
+            "inputData": "13 25 8 -1\n",
+            "outputData": "17"
+        },
+        {
+            "inputData": "102 21 88 64 -1\n",
+            "outputData": "81"
+        }
+    ],
+    "id": "nV3w5ydqmBdL"
+}

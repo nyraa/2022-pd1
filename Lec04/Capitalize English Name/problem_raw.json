@@ -1,0 +1,33 @@
+{
+    "description": "<p>In English, the <strong>first letter of people's name should be capitalized</strong>.</p><p> For example, the name <code>harry james potter</code> should be written as <code>Harry James Potter</code>. </p><p>Now I got a bunch of people's name here, but the letter case of these names are messed up.</p><p> Some names are not capitalized properly, and some names got upper case letter in the middle. </p><p>Each name in the line is ended with either <code>,</code>, <code>.</code> or <code>;</code>.</p><p>Please help me convert these names into the proper format, and then make a list of them.</p>",
+    "inputFormat": "The integer i in the first line indicats the number of names with range 1 - 100.\r\nThe next line is a string of names which are end with , . or ;.\r\nEach name is composed of a - z, A - Z and space.",
+    "outputFormat": "English names with correct format.\r\nEach name is saparated by a new line.",
+    "level": "Hard",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec04"
+    },
+    "tags": [
+        "Basic Types",
+        "Loop"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "",
+    "templateCode": "#include<stdio.h>\r\n\r\nint main () {\r\n    return 0;\r\n}\r\n",
+    "title": "Capitalize English Name",
+    "date": "2022-10-03T06:24:01.850Z",
+    "samples": [
+        {
+            "inputData": "2\nharry james potter;albus perCIval WulFric brian DUMbledore.",
+            "outputData": "Harry James Potter\nAlbus Percival Wulfric Brian Dumbledore\n"
+        },
+        {
+            "inputData": "4\nRoNald BILius WeaSLey,HeRmione JEAN Granger;SeVerus snape.draco LuCIus Malfoy;",
+            "outputData": "Ronald Bilius Weasley\nHermione Jean Granger\nSeverus Snape\nDraco Lucius Malfoy\n"
+        }
+    ],
+    "id": "ZNBefHvaxm30"
+}

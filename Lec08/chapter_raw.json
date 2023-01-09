@@ -1,0 +1,14 @@
+{
+    "review": "<h1>8.1 Pointer Variables</h1><ol><li><p>In modern computers, main memory is divided into bytes, and each byte has a unique address.</p></li><li><p>Each variable in a program occupies one or more bytes of memory.</p></li><li><p>The address of the variable is the address of the first byte of it.</p></li><li><p>A pointer variable is a type for storing addresses.</p></li><li><p>An sterisk is used to declare a pointer variable:</p></li></ol><pre><code>int *p;</code></pre><ol start=\"6\"><li><p>Pointers could be declared along with other variables.</p></li></ol><pre><code>int a, b, c, *d;</code></pre><ol start=\"7\"><li><p>C requires the pointers point to a particular type.</p></li><li><p>The type specified while declaring the pointer indicates the way to interpret the memory area the pointer points to.</p></li><li><p>There are a pair of operators specifically for use with pointers:</p><ul><li><p><code>&amp;</code> (address-of operator): Used to find the address of a variable.</p></li><li><p><code>*</code> (indicrection operator): Used to access to the object a pointer points to.</p></li></ul></li><li><p>An address stored in a pointer could be assigned to another pointer that points to the same type.</p></li></ol><h1>8.2 Pointers as Arguments and Return Values</h1><ol><li><p>Pass the address of a variable to a function allows the specific variable be accessed with in the function, which is also called <strong>pass by reference</strong>.</p></li><li><p><code>const</code> could be used to ensure that the object that the pointer points to will not be changed via the pointer.</p></li><li><p>A pointer that points to an external variable or a static variable could be returned from a function.</p></li></ol>",
+    "videoUrl": "https://www.youtube.com/embed/3lUsB6LIlRQ",
+    "makeUpTime": "2022-11-16T16:00:00.000Z",
+    "notification": {
+        "makeUpTime": "8DwsFyG-cPbMnaKUDYp7"
+    },
+    "startTime": "2022-11-02T16:00:00.000Z",
+    "dueTime": "2022-11-23T16:00:00.000Z",
+    "sections": [],
+    "type": "Homework",
+    "index": "Lec08",
+    "title": "Pointers"
+}

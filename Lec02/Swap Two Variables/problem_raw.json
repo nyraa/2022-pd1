@@ -1,0 +1,32 @@
+{
+    "description": "<p>Read two integers and store them in variables <code>a</code> and <code>b</code>.<br>Swap the values in <code>a</code> and <code>b</code> and print them out .</p>",
+    "level": "Easy",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec02"
+    },
+    "tags": [
+        "Assignments"
+    ],
+    "timeLimit": 1,
+    "memLimit": 10000,
+    "coinReward": 0,
+    "title": "Swap Two Variables",
+    "inputFormat": "Two integers split by a space.",
+    "outputFormat": "Two integers split by a space.",
+    "date": "2020-09-13T14:47:32.160Z",
+    "loaderCode": "",
+    "templateCode": "#include <stdio.h>\r\n\r\nint main(void){\r\n    return 0;\r\n}\r\n",
+    "hint": "",
+    "samples": [
+        {
+            "inputData": "20 21",
+            "outputData": "21 20"
+        },
+        {
+            "inputData": "2147483647 -2147483648",
+            "outputData": "-2147483648 2147483647"
+        }
+    ],
+    "id": "UGWuibzTkCcr"
+}

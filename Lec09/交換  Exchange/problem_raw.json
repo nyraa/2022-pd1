@@ -1,0 +1,34 @@
+{
+    "description": "<p>給定各有 N 個正整數的兩序列 A, B ，請回傳最少進行以下操作幾次後，滿足兩序列的相同索引值，A 的元素會大於等於 B 的元素以及最終的 A 序列。</p><ul><li><p>對於索引值 i (1 ≦ i ≦ N)，將 Ai 與 Bi 元素互換</p></li></ul><p>更系統的說，請回傳最少需經過幾次以上操作後，滿足對於所有 i (1 ≦ i ≦ N)， 使得 A_i ≥ B_i，以及完成所有操作後的 A。</p><p></p><hr><p></p><p>Given two sequences A, B with N positive integers each, return the sequence A and B that satisfies the same index value of both sequences at least a few times, and the elements of A will be larger than the elements of B and the final A sequence.</p><ul><li><p>For the index value i (0&lt;=i&lt;N), swap the elements of Ai and Bi</p></li></ul><p>More systematically, please return A after at least a few operations to satisfy for all i (1 ≦ i ≦ N), so that A<em>i ≥ B</em>i, and after completing all operations.</p>",
+    "inputFormat": "第一行有一個正整數 N（1 ≦ N ≦ 10^5），代表序列 A, B 有幾個正整數。\r\n\r\n第二行有 N 個正整數 A_1、A_2...A_N，代表序列 A 的元素。（對所有 1 ≦ i ≦ N，1 ≦ A_i ≦ 10^9）\r\n\r\n第三行有 N 個正整數 B_1、B_2...B_N，代表序列 B 的元素。（對所有 1 ≦ i ≦ N，1 ≦ B_i ≦ 10^9）\r\n\r\nThe first line has a positive integer N (1 ≦ N ≦ 10^5), representing the sequence A, B has several positive integers.\r\n\r\nThe second row has N positive integers A_1, A_2.... .A_N, representing the elements of the sequence A. (for all 1 ≦ i ≦ N, 1 ≦ A_i ≦ 10^9)\r\n\r\nThe third row has N positive integers B_1, B_2.... .B_N, representing the elements of sequence B. (for all 1 ≦ i ≦ N, 1 ≦ B_i ≦ 10^9)\r\n",
+    "outputFormat": "第一行有一個正整數 S ，代表最找需要幾次操作。\r\n第二行有 N 個正整數，代表操作後最終的 A 序列。\r\n\r\nThe first row has a positive integer S, which represents the number of operations needed to find the most.\r\nThe second row has N positive integers, which represent the final A sequence after the operation.",
+    "level": "Easy",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec09"
+    },
+    "tags": [
+        "Loop",
+        "Array",
+        "Pointers"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include<stdio.h>\r\nint N;\r\n\r\nvoid solve(int *A, int *B, int *op_cnt);\r\n\r\nint main(){\r\n    int A[1<<17] = {0};\r\n    int B[1<<17] = {0};\r\n    int op_cnt = 0;\r\n\r\n    scanf(\"%d\", &N);\r\n    for(int i = 0; i<N; i++)\r\n        scanf(\"%d\", &A[i]);\r\n    for(int i = 0; i<N; i++)\r\n        scanf(\"%d\", &B[i]);\r\n\r\n    solve(A, B, &op_cnt);\r\n    printf(\"%d\\n\", op_cnt);\r\n    for(int i = 0; i<N; i++)\r\n        printf(\"%d \", A[i]);\r\n}",
+    "templateCode": "void solve(int *A, int *B, int *op_cnt){\r\n\r\n}",
+    "title": "交換  Exchange",
+    "date": "2022-11-15T00:49:05.715Z",
+    "samples": [
+        {
+            "inputData": "3\n9 2 4\n7 10 1",
+            "outputData": "1\n9 10 4 "
+        },
+        {
+            "inputData": "10\n9 6 10 2 6 6 6 7 7 6\n3 6 8 7 7 3 5 8 1 8",
+            "outputData": "4\n9 6 10 7 7 6 6 8 7 8 "
+        }
+    ],
+    "id": "mc76ybqusQA6"
+}

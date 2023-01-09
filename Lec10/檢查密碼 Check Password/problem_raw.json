@@ -1,0 +1,45 @@
+{
+    "description": "<p>在生活中，我們經常需要設定密碼，而在設定密碼時，系統通常會避免只讓使用者輸入一次密碼，因為這樣很可能不小心設定成錯的密碼。所以會要求使用者輸入兩次密碼，並檢查是否一致。</p><p>而在設定密碼時，必須遵守密碼規則，才能成功的設置符合條件的高強度密碼。</p><p>身為未來工程師的你 (?)，依據下列的條件，請你實作出能讓使用者設定密碼的功能。</p><p>密碼條件有優先權之分，優先權大小由上至下，只要優先權較高的未通過，就不做後續的判斷。意即當條件 1 不符合時，就不做條件 2、3 的判斷；當條件 2 不符合時，就不做條件 3 的判斷。</p><p>密碼條件如下：</p><p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 兩次輸入的密碼長度皆介於 6 至 16 個位元（僅檢查長度是否在範圍內，不須檢查長度是否相同）</p><p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 兩次輸入的密碼須一致</p><p>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 密碼須同時包含英文大寫、英文小寫、數字三種字符</p><p>接著請你觀察 loader code，可以發現當密碼條件不符時，函式會回傳 1，並印出哪個條件不符。請你根據 loader code 的內容，來完成判斷密碼條件的三個函式。</p><p></p><p>In our life, we often need to set up passwords, and when setting up passwords, the system usually avoids asking the user to enter the password only once, because it is likely to set up the wrong password accidentally. Therefore, we will ask the user to enter the password twice and check if it is the same.</p><p>When setting a password, you must follow the password rules in order to successfully set a high-strength password that matches the conditions.</p><p>As a future engineer (?), you are asked to implement a feature that allows users to set a password based on the following conditions.</p><p>There is a priority for the password conditions, and the priority is from top to bottom, as long as the higher priority failed, the subsequent judgment will not be made. That is, when condition 1 is not satisfied, the judgment of conditions 2 and 3 will not be made; when condition 2 is not satisfied, the judgment of condition 3 will not be made.</p><p>The password conditions are as follows.</p><p>1. Both passwords must be between 6 and 16 digits long (Check only if the length are within the range, no need to check if the length are the same)</p><p>2. The password must be the same for both inputs</p><p>3. The password must contain both upper case, lower case and numeric characters</p><p>Next, please observe the loader code, you can find that when the password condition does not match, the function will return 1 and print out which condition does not match. Please complete the three functions to determine the password condition according to the contents of the loader code.</p>",
+    "inputFormat": "使用者輸入兩次密碼，長度介於 1~20，僅會輸入英文大寫、英文小寫、數字這三種類型的字符。\r\nThe user enters the password twice, with a length between 1 and 20, and only three types of characters will be entered: upper case, lower case, and numbers.",
+    "outputFormat": "根據密碼條件的判斷結果，輸出對應的文字，長度過長或過短：「Length does not match the requirements」；兩次輸入不一致：「Not the same password」；密碼不符合條件：「Do not satisfy the conditions」；密碼符合條件：「Everything is good」。\r\nAccording to the judgment result of the password conditions, output the corresponding text, length is too long or too short: \"Length does not match the requirements\"; two input inconsistencies: \"Not the same password\"; password does not meet the conditions: \"Do not satisfy the conditions\"; password meets the conditions: \"Everything is good\".",
+    "level": "Easy",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec10"
+    },
+    "tags": [
+        "Format I/O",
+        "If/else",
+        "Loop",
+        "String",
+        "Array",
+        "Function"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "# include <stdio.h>\r\n# include <string.h>\r\n\r\n#define SIZE 25\r\n\r\nint length(char pwd1[], char pwd2[]);\r\n\r\nint compare(char pwd1[], char pwd2[]);\r\n\r\nint content(char pwd1[]);\r\n\r\nint main()\r\n{\r\n    char password1[SIZE];\r\n    char password2[SIZE];\r\n    \r\n    // Enter the password\r\n    scanf(\"%s\", password1);\r\n    // Enter the password again\r\n    scanf(\"%s\", password2);\r\n    \r\n    // Check Password\r\n    // First: Check length\r\n    if(length(password1, password2) == 1) {\r\n        printf(\"Length does not match the requirements\");\r\n    }\r\n    else {\r\n        // Second: Check for consistency\r\n        if(compare(password1, password2) == 1) {\r\n            printf(\"Not the same password\");\r\n        }\r\n        else {\r\n            // Third: Check for compliance\r\n            if(content(password1) == 1) {\r\n                printf(\"Do not satisfy the conditions\");\r\n            }\r\n            else {\r\n                printf(\"Everything is good\");\r\n            }\r\n        }\r\n    }\r\n\r\n    return 0;\r\n}",
+    "templateCode": "int length(char pwd1[], char pwd2[]) {\r\n    return 1;\r\n}\r\n\r\nint compare(char pwd1[], char pwd2[]) {\r\n    return 1;\r\n}\r\n\r\nint content(char pwd1[]) {\r\n    return 1;\r\n}",
+    "title": "檢查密碼 Check Password",
+    "date": "2022-11-21T08:56:41.986Z",
+    "samples": [
+        {
+            "inputData": "zQJB39A\nzQJB39A\n",
+            "outputData": "Everything is good"
+        },
+        {
+            "inputData": "Rm0kzLBiVFcB7m\ncs\n",
+            "outputData": "Length does not match the requirements"
+        },
+        {
+            "inputData": "a123456\na123456\n",
+            "outputData": "Do not satisfy the conditions"
+        },
+        {
+            "inputData": "HelloWorld123\nHelloworld987\n",
+            "outputData": "Not the same password"
+        }
+    ],
+    "id": "6nsFlvAmP9UC"
+}

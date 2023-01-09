@@ -1,0 +1,39 @@
+{
+    "description": "<p>In the previous part, we have beat the dragon, and it is time to move on. In this part, we are about to travel through a desert.</p><p>In this part, only three dice, with the highest scores of them are 4 (d1), 6 (d2), and 8 (d3), respectively,  as well as three magic numbers will be used. The three magic numbers are defined as following:</p><pre><code>NUMBER_1 = 0x38E38E38E38E3800LLU\nNUMBER_2 = 0x2AAAAAAAAAAAAAAALLU\nNUMBER_3 = 0x1C71C71C71C71C71LLU</code></pre><p>In your turn, you have to roll three dice and combine the scores of them with three magic numbers:</p><pre><code>(d1 * NUMBER_1 + d2 * NUMBER_2 + d3 * NUMBER_3) mod 0x7CE66C50E2840000LLU</code></pre><p>Then you will get the steps you should take on your next move (Assume that we have such large map).</p>",
+    "inputFormat": "Three integers indicates the score of three dice (d1, d2, d3).",
+    "outputFormat": "Steps the player should take.",
+    "level": "Medium",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec04-2"
+    },
+    "tags": [
+        "Format I/O",
+        "Assignments",
+        "Expression",
+        "Basic Types"
+    ],
+    "hint": "You may not implement the formula directly, since you should consider that integer overflow may occur. Consider the equation (a + b) % c = ((a % c) + (b % c)) % c to avoid integer overflow.",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "",
+    "templateCode": "#include <stdio.h>\r\n\r\nint main () {\r\n    return 0;\r\n}\r\n",
+    "title": "Dungeons & Dragons, Part III",
+    "date": "2022-10-10T04:09:36.072Z",
+    "samples": [
+        {
+            "inputData": "2 4 2",
+            "outputData": "6595658764946068362"
+        },
+        {
+            "inputData": "4 3 6",
+            "outputData": "1918307262625188516"
+        },
+        {
+            "inputData": "1 4 4",
+            "outputData": "6595658764946068588"
+        }
+    ],
+    "id": "R44CpW_fI5il"
+}

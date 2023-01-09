@@ -1,0 +1,14 @@
+{
+    "review": "<h2><strong>10.5 Arrays of Strings</strong></h2><h3><strong>Array of Strings</strong></h3><ul><li><p>There is more than one way to store an array of string:</p><ul><li><p>Using a <strong>two-dimensional array</strong> of characters.</p><pre><code>char planets[][8] = {\n    \"Mercury\", \"Venus\", \"Earth\",\n    \"Mars\", \"Jupiter\", \"Saturn\",\n    \"Uranus\", \"Neptune\", \"Pluto\"\n};\n</code></pre></li><li><p>Simulating a ragged array in C by creating an array whose elements are <strong>pointers to strings</strong>.</p><pre><code>char *planets[] = {\n    \"Mercury\", \"Venus\", \"Earth\",\n    \"Mars\", \"Jupiter\", \"Saturn\",\n    \"Uranus\", \"Neptune\", \"Pluto\"\n};\n</code></pre></li></ul></li></ul><h3><strong>Command-Line Arguments</strong></h3><ul><li><p>To obtain access to command-line arguments, <code>main</code> must have two parameters:</p><ul><li><p><code>argc</code>: The number of commandline arguments</p></li><li><p><code>argv</code>: An array of pointers to the command-line arguments (stored as strings)<br><code>int main(int argc, char *argv[])</code></p></li></ul></li><li><p>Example:</p><ul><li><p>Command: <code>ls -l remind.c</code></p></li><li><p>Result:</p><ul><li><p><code>argc</code> will be <strong>3</strong>.</p></li><li><p><code>argv</code> will have the following appearance:<br><img src=\"https://i.imgur.com/0UJ2chu.png\" alt=\"\"></p></li></ul></li></ul></li></ul>",
+    "videoUrl": "https://www.youtube.com/embed/1DgFLdzA8N8",
+    "makeUpTime": "2022-12-14T16:00:00.000Z",
+    "notification": {
+        "makeUpTime": "ALKEc3357ID783P55OG_"
+    },
+    "startTime": "2022-11-30T16:00:00.000Z",
+    "dueTime": "2022-12-21T16:00:00.000Z",
+    "sections": [],
+    "type": "Homework",
+    "index": "Lec10-2",
+    "title": "String(part 2)"
+}

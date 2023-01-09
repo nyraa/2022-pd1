@@ -1,0 +1,38 @@
+{
+    "description": "<p>After you flew across the such huge map, a locked gate appears in your sight. The lock is so heavy that you are not able to simply destroy it, but you suddenly notice that there is paper with hints for unlocking the gate stuck up on the gate. To unlock the gate, you will have to roll 4 4-face dices (d1 ... d4) and process a 32-bit unsigned integer N with the following instructions:</p><ol><li><p>Define a 32-bit unsigned integer called <code>temp</code>.</p></li><li><p>Xor the (d1)th byte of N with the (d2)th byte of N and store the result at the 1st byte of <code>temp</code>.</p></li><li><p>And the (d2)th byte of N with the (d3)th byte of N and store the result at the 2nd byte of <code>temp</code>.</p></li><li><p>Or the (d3)th byte of N with the (d1) the byte of N and store the result at the 3rd byte of <code>temp</code>.</p></li><li><p>Toggle the (d4)th byte of N and place the result at the 4th byte of <code>temp</code>.</p></li><li><p>Rotate the <code>temp</code> right by (d1 + d2 + d3 + d4) bits.</p></li><li><p>Xor the upper 16 bits of <code>temp</code> with the lower 16 bits of <code>temp</code> to form a 16-bit unsigned integer.</p></li></ol><p>And the result (in decimal) will be the password of the gate.</p><p></p><p><strong>Notice</strong>: The bytes of N and <code>temp</code> are labeled 1 to 4 from MSB to LSB, for example:</p><pre><code>0x01020304:\n00000001 | 00000010 | 00000011 | 00000100\n1st byte | 2nd byte | 3rd byte | 4th byte</code></pre><p></p><hr><p>Let's have a look on the first sample:</p><pre><code>N: 82564876 = 0x04EBD70C\nd1: 4, d2: 3, d3: 2, d4: 1\n\nStep 1:\n    temp: 0x00000000 (could be any initial value, does not matter)\n\nStep 2:\n    4th byte of N: 0x0C, 3rd byte of N: 0xD7\n    [0x0C (00001100)] xor [0xD7 (11010111)] = [0xDB (11011011)]\n    temp: 0xDB000000\n\nStep 3:\n    3rd byte of N: 0xD7, 2nd byte of N: 0xEB\n    [0xD7 (11010111)] and [0xEB (11101011)] = [0xC3 (11000011)]\n    temp: 0xDBC30000\n\nStep 4:\n    2nd byte of N: 0xEB, 4th byte of N: 0x0C\n    [0xEB (11101011)] or [0x0C (00001100)] = [0xEF (11101111)]\n    temp: 0xDBC3EF00\n\nStep 5:\n    1st byte of N: 0x04\n    Toggle [0x04 (00000100)] = [0xFB (11111011)]\n    temp: 0xDBC3EFFB\n\nStep 6:\n    d1 + d2 + d3 + d4 = 10\n    Rotate [0xDBC3EFFB (11011011 11000011 11101111 11111011) right 10 bits\n        = [0xFEF6F0FB (11111110 11110110 11110000 11111011)\n\nStep 7:\n    Upper 16 bits of temp: 0xFEF6, Lower 16 bits of temp: 0xF0FB\n    [0xFEF6 (11111110 11110110)] xor [0xF0FB (11110000 11111011)]\n        = [0x0E0D (00001110 00001101)] = 3597\n\nResult: 3597</code></pre>",
+    "inputFormat": "The first line contains a 32-bit unsgined integer.\r\nThe second line are 4 numbers indicate the score of 4 dices.",
+    "outputFormat": "The password of the gate.",
+    "level": "Medium",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec04-2"
+    },
+    "tags": [
+        "Format I/O",
+        "Expression",
+        "Bitwise Operations"
+    ],
+    "hint": "You may print the value in hexdecimal format to make sure that you have the right operations step by step. To rotate an unsigned integer right,  just move the rightmost bit to the left, e.g. 0101 becomes 1010 after rotate right for one bit.",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "",
+    "templateCode": "#include <stdio.h>\r\n\r\nint main () {\r\n    return 0;\r\n}\r\n",
+    "title": "Dungeons & Dragons, Part IV",
+    "date": "2022-10-11T01:36:03.063Z",
+    "samples": [
+        {
+            "inputData": "82564876\n4 3 2 1",
+            "outputData": "3597"
+        },
+        {
+            "inputData": "1790930214\n4 4 3 4",
+            "outputData": "57338"
+        },
+        {
+            "inputData": "4247917581\n3 3 4 4",
+            "outputData": "30680"
+        }
+    ],
+    "id": "HbiGT0bICsuV"
+}

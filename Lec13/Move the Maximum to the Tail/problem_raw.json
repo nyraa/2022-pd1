@@ -1,0 +1,29 @@
+{
+    "description": "<p>Given <code>n</code> <strong>different positive</strong> integers, please move the maximum value to the tail of the linked list.</p><p>給定<code>n</code>個<strong>相異的正整數</strong>，請你將當中最大的那個數字移到該Linked-List的最後面。</p>",
+    "inputFormat": "5 <= n <= 1000, each value will be less 100000.",
+    "outputFormat": "The content of the linked list.",
+    "level": "Medium",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec13"
+    },
+    "tags": [
+        "Pointers",
+        "Struct"
+    ],
+    "timeLimit": 1,
+    "memLimit": 65536,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>\r\n#include <stdlib.h>\r\n\r\nstruct node {\r\n    int val;\r\n    struct node *next;\r\n};\r\nstruct node *head = NULL;\r\nstruct node *tail = NULL;\r\nvoid MoveToTail();\r\n\r\nint main(void) { \r\n    int n;\r\n    scanf(\"%d\", &n);\r\n    for(int i = 1; i <= n; ++i) {\r\n        struct node *tmp = malloc(sizeof(struct node));\r\n        scanf(\"%d\", &tmp->val);\r\n        tmp->next = NULL;\r\n        if(i == 1)\r\n            head = tmp;\r\n        else\r\n            tail->next = tmp;\r\n        tail = tmp;\r\n    }\r\n    MoveToTail();\r\n    for(struct node *cur = head; cur != NULL; cur = cur->next) {\r\n        printf(\"%d \", cur->val);\r\n    }\r\n    return 0;\r\n}",
+    "templateCode": "void MoveToTail() {\r\n    // \"struct node *head\" and \"struct node *tail\" are in global\r\n    // you can use this two pointers to do this problem\r\n}",
+    "title": "Move the Maximum to the Tail",
+    "date": "2021-01-01T02:32:51.778Z",
+    "hint": "",
+    "samples": [
+        {
+            "inputData": "5\n1 2 5 4 3",
+            "outputData": "1 2 4 3 5 "
+        }
+    ],
+    "id": "xnV3GgmAnq5X"
+}

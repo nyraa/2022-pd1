@@ -1,0 +1,36 @@
+{
+    "description": "<p>Welcome to PD1 Coffee Shop! We provide 4 types of coffee:</p><ol><li><p>AMERICANO $ 110</p></li><li><p>LATTE $ 150</p></li><li><p>CAPPUCCINO $135</p></li><li><p>MOCHA $ 145</p></li></ol><p><br>Please write a program to calculate <strong>how much should the client pay</strong>.</p><p>Be aware of those troublesome customers！</p><p>Some of them would ask for the coffee that is <strong>not presented in the menu</strong>.</p>",
+    "inputFormat": "Two integers i, j separated by a space.\r\nInteger i indicates the type of the coffee on the menu (e.g. 1 is AMERICANO, 2 is LATTE, and so on), with range 1-100.\r\nInteger j indicates how many cups of coffee that the client wants, with range 1-20.",
+    "outputFormat": "If the number of coffee is on the menu, you need to print the total price in the following format: \"The total price is <price> dollars!\", where <price> is the amount of money that the client should pay.\r\nIf not, you need to print \"Wait, what?\".",
+    "level": "Easy",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec03"
+    },
+    "tags": [
+        "Switch"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "",
+    "templateCode": "#include <stdio.h>\r\n#define AMERICANO  110\r\n#define LATTE      150\r\n#define CAPPUCCINO 135\r\n#define MOCHA      145\r\n\r\nint main() {\r\n\r\n    return 0;\r\n}",
+    "title": "Coffee Shop",
+    "date": "2022-09-17T12:10:18.651Z",
+    "samples": [
+        {
+            "inputData": "4 10\n",
+            "outputData": "The total price is 1450 dollars!\n"
+        },
+        {
+            "inputData": "3 19\n",
+            "outputData": "The total price is 2565 dollars!\n"
+        },
+        {
+            "inputData": "34 18\n",
+            "outputData": "Wait, what?\n"
+        }
+    ],
+    "id": "I6A521tIWYJH"
+}

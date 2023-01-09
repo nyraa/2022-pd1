@@ -1,0 +1,41 @@
+{
+    "description": "<p>Dongeons &amp; Dragons (DnD) is a popular TRPG game. Players keep rolling several dice during the game to take actions. The results of the actions depend on the outcome of dice.</p><p>Image that you are trying to beat a dragon in DnD, you have to roll six dice (named d1, d2, ..., d6) at each step. The rules of the dice are as follows:</p><ul><li><p>The sum of d1, d2 and d3 determines that who takes the turn to attack: If the sum is less than or equal to 10, the player attacks. Otherwise, the dragon attacks.</p></li></ul><ul><li><p>In the player's turn to attack, there are three cases:</p><ol><li><p>If d4, d5 and d6 are identical, the player makes a critical hit.</p></li><li><p>If the sum of d4 and d5 is <strong>greater than or equal</strong> to d6, the player makes a normal hit.</p></li><li><p><strong>Otherwise</strong>, the attack misses.</p></li></ol></li><li><p>In the dragon's turn to attack, there are also three cases:</p><ol><li><p>If any two of d4, d5 and d6 are <strong>identical</strong>, the attack misses.</p></li><li><p>If the sum of d4 and d5 is <strong>not equal to</strong> d6, the dragon makes a normal attack.</p></li><li><p><strong>Otherwise</strong>, a critical attack is made by the dragon.</p></li></ol></li><li><p>The cases must be evaluated in the above order.</p></li></ul>",
+    "inputFormat": "Six space-separated integers that indicates the number of six dice (d1 to d6).",
+    "outputFormat": "A single line of string that indicates the result: \"<attacker> attacks: <hit>\". Where <attacker> has two possible values: \"Player\" and \"Dragon\". And <hit> has three possible values: \"Critical Hit\", \"Normal Hit\" and \"Miss\".",
+    "level": "Easy",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec03"
+    },
+    "tags": [
+        "If/else",
+        "Expression"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "",
+    "templateCode": "#include<stdio.h>\r\n\r\nint main () {\r\n    return 0;\r\n}\r\n",
+    "title": "Dungeons & Dragons",
+    "date": "2022-09-17T09:59:39.678Z",
+    "samples": [
+        {
+            "inputData": "2 3 4 10 6 14\n",
+            "outputData": "Player attacks: Normal Hit\n"
+        },
+        {
+            "inputData": "3 6 2 9 8 10\n",
+            "outputData": "Dragon attacks: Normal Hit\n"
+        },
+        {
+            "inputData": "4 6 1 2 10 2\n",
+            "outputData": "Dragon attacks: Miss\n"
+        },
+        {
+            "inputData": "2 2 5 6 6 6\n",
+            "outputData": "Player attacks: Critical Hit\n"
+        }
+    ],
+    "id": "ZA1yQnebj6wI"
+}

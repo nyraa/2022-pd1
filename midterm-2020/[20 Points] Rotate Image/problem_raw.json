@@ -1,0 +1,34 @@
+{
+    "description": "<p>In computer, everything is represented by numbers — so does image. Computer stores image as a matrix. A cell in the matrix is a pixel in the image, and number in the cell represents the color of that pixel.</p><p>If we want to rotate an image, it means that we want to rotate the matrix itself. For example, consider an image as follows:</p><pre><code>| 1 2 3 |\n| 4 5 6 |\n| 7 8 9 |</code></pre><p>If we want to <strong>rotate this image 90 degrees to the right</strong>, we can rotate the matrix like this:</p><pre><code>| 7 4 1 |\n| 8 5 2 |\n| 9 6 3 |</code></pre><p>Now given the degree of <strong>right rotation</strong>, can you help me rotate my images?</p><p>在電腦裡，所有東西都是用數字來表達的——就連圖片也不例外。電腦以矩陣的形式來儲存每一張圖片，矩陣裡的格子代表著圖片的像素，而格子裡的數字就代表了該像素的顏色。</p><p>當我們要對圖片做旋轉時，我們實際上就是在旋轉這個矩陣本身。舉例來說，如果有一張圖片長這樣：</p><pre><code>| 1 2 3 |\n| 4 5 6 |\n| 7 8 9 |</code></pre><p>如果我們想將這張圖片<strong>向右旋轉 90 度</strong>，那麼就等於是把矩陣旋轉成這樣：</p><pre><code>| 7 4 1 |\n| 8 5 2 |\n| 9 6 3 |</code></pre><p>給定<strong>向右旋轉的角度</strong>，你能將圖片做正確的旋轉嗎？</p>",
+    "level": "Medium",
+    "chapter": {
+        "type": "Exam",
+        "index": "midterm-2020"
+    },
+    "tags": [
+        "Loop",
+        "Array",
+        "Format I/O"
+    ],
+    "timeLimit": 5,
+    "memLimit": 65536,
+    "coinReward": 0,
+    "title": "[20 Points] Rotate Image",
+    "inputFormat": "The input consists of 3 part.\r\nThe first line is an integer, indicates the degree of right rotation. It will be one of the following numbers: 90, 180 or 270.\r\nThe second line contains 2 integers m & n, indicates the dimension of the image. And 3 <= m, n <= 100.\r\nThe following m lines contain n integers, representing the image itself. Each integer in the image is in the range of [0, 100].",
+    "outputFormat": "The rotated image.\r\nEach number must follow by a space.\r\nYou need to print newline at the end of last line.",
+    "date": "2020-11-07T15:20:41.815Z",
+    "loaderCode": "",
+    "templateCode": "#include <stdio.h>\r\n\r\nint main(void){\r\n    return 0;\r\n}\r\n",
+    "hint": "",
+    "samples": [
+        {
+            "inputData": "90\n3 4\n1 5 6 7\n5 8 9 2\n3 0 4 7",
+            "outputData": "3 5 1 \n0 8 5 \n4 9 6 \n7 2 7 \n"
+        },
+        {
+            "inputData": "270\n21 21\n21 10 93 23 83 45 35 28 6 32 19 14 27 36 3 59 98 88 100 96 10\n98 36 73 91 33 59 33 78 94 72 83 9 88 85 30 58 58 20 37 52 100\n12 73 16 25 22 13 32 44 94 75 62 80 4 47 81 19 57 13 5 50 38\n75 42 12 91 96 27 68 67 87 96 79 34 65 57 95 5 15 50 63 60 89\n60 78 94 37 6 41 48 76 71 26 77 15 26 100 88 63 100 69 98 6 64\n1 20 97 93 92 17 78 97 95 87 82 36 23 25 77 72 8 60 57 54 49\n17 69 9 49 28 82 70 30 12 44 36 94 87 79 26 22 6 90 32 65 93\n100 2 85 14 77 59 41 34 94 25 21 72 71 13 10 43 89 35 43 71 11\n22 79 7 5 42 58 90 29 23 39 63 30 43 65 28 31 42 23 74 81 96\n5 87 44 35 70 90 86 76 20 21 80 8 85 46 91 80 5 5 70 20 24\n80 90 50 34 99 82 19 42 62 3 79 78 46 56 98 42 44 54 75 17 85\n80 93 81 49 100 65 46 21 4 3 83 50 35 24 75 46 64 81 13 38 94\n53 30 38 38 13 72 64 53 89 86 35 27 30 48 48 17 73 48 37 36 56\n43 24 86 96 78 49 40 19 18 43 43 3 52 99 56 79 42 2 87 69 63\n42 37 38 81 64 17 8 34 90 96 11 81 80 39 2 59 32 37 75 60 58\n69 52 72 38 91 61 3 15 1 54 40 21 63 67 48 38 7 56 96 51 1\n36 96 51 16 83 62 31 90 93 40 51 72 1 32 77 93 13 18 29 94 49\n97 68 16 2 60 22 48 16 73 23 28 41 79 79 100 82 79 99 62 95 85\n12 45 90 10 97 97 41 30 98 26 45 47 67 11 22 26 43 31 28 45 86\n100 82 88 66 49 35 76 42 64 41 5 90 58 97 97 25 58 7 55 4 57\n30 52 5 24 17 75 91 10 100 35 15 52 100 19 40 97 90 73 92 24 68",
+            "outputData": "10 100 38 89 64 49 93 11 96 24 85 94 56 63 58 1 49 85 86 57 68 \n96 52 50 60 6 54 65 71 81 20 17 38 36 69 60 51 94 95 45 4 24 \n100 37 5 63 98 57 32 43 74 70 75 13 37 87 75 96 29 62 28 55 92 \n88 20 13 50 69 60 90 35 23 5 54 81 48 2 37 56 18 99 31 7 73 \n98 58 57 15 100 8 6 89 42 5 44 64 73 42 32 7 13 79 43 58 90 \n59 58 19 5 63 72 22 43 31 80 42 46 17 79 59 38 93 82 26 25 97 \n3 30 81 95 88 77 26 10 28 91 98 75 48 56 2 48 77 100 22 97 40 \n36 85 47 57 100 25 79 13 65 46 56 24 48 99 39 67 32 79 11 97 19 \n27 88 4 65 26 23 87 71 43 85 46 35 30 52 80 63 1 79 67 58 100 \n14 9 80 34 15 36 94 72 30 8 78 50 27 3 81 21 72 41 47 90 52 \n19 83 62 79 77 82 36 21 63 80 79 83 35 43 11 40 51 28 45 5 15 \n32 72 75 96 26 87 44 25 39 21 3 3 86 43 96 54 40 23 26 41 35 \n6 94 94 87 71 95 12 94 23 20 62 4 89 18 90 1 93 73 98 64 100 \n28 78 44 67 76 97 30 34 29 76 42 21 53 19 34 15 90 16 30 42 10 \n35 33 32 68 48 78 70 41 90 86 19 46 64 40 8 3 31 48 41 76 91 \n45 59 13 27 41 17 82 59 58 90 82 65 72 49 17 61 62 22 97 35 75 \n83 33 22 96 6 92 28 77 42 70 99 100 13 78 64 91 83 60 97 49 17 \n23 91 25 91 37 93 49 14 5 35 34 49 38 96 81 38 16 2 10 66 24 \n93 73 16 12 94 97 9 85 7 44 50 81 38 86 38 72 51 16 90 88 5 \n10 36 73 42 78 20 69 2 79 87 90 93 30 24 37 52 96 68 45 82 52 \n21 98 12 75 60 1 17 100 22 5 80 80 53 43 42 69 36 97 12 100 30 \n"
+        }
+    ],
+    "id": "2n_jT1hYuITh"
+}

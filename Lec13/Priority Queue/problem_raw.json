@@ -1,0 +1,43 @@
+{
+    "description": "<p>Priority Queue 是一個非常有用的資料結構，在許多實做中皆有使用到類似的概念，例如 Linux 的核心排程器或是股票的交易系統等。現在給定 Priority Queue 中節點的結構，請你實作 Priority Queue 的 enqueue 及 dequeue 函式：</p><p>1. Priority Queue 中的每個節點皆包含兩個欄位：值（value）及權重（weight），且須以 linked-list 進行串接。</p><p>2. 進行 enqueue 操作時以權重為排序依據，權重越小者越靠前面，且若權重相同，越先插入者越靠前。</p><p>3. 進行 dequeue 操作時取出整個 Priority Queue 最前面的節點並將其回傳，若 Priority Queue 為空則回傳 NULL。</p><p>4. 每次操作後從最前面開始將 Priority Queue 中的節點之值（value）印出。（Loader code 會處理）</p><hr><p></p><p>Priority Queue is a very useful data structure that is implemented in many systems, such as the scheduler of Linux or the stock transaction system. Now, with given structure of priority queue node, please implement the enqueue and dequeue function of priority queue:</p><ol><li><p>There are two fields: value and weight in the priority queue node, the nodes in the queue should be formed as linked-list.</p></li><li><p>To perform enqueue operation, the rank of nodes depends on the weight of nodes, smaller comes first, and if the weights of two nodes are identical, the newly inserted node should come after the other node.</p></li><li><p>The dequeue operation returns the first node of entire priority queue, NULL if priority queue is empty.</p></li><li><p>Print the value of nodes that are still in the priority queue from the head, which will be performed by the loader code.</p></li></ol>",
+    "inputFormat": "The first line of input contains an integer N indicates the number of operations.\r\nThe rest of N lines are the operations and each operation should be either \"ENQUEUE V W\" or \"DEQUEUE\",\r\nwhere the former one means insert a node with value V and weight W to Priority Queue, while the later one\r\nfetches a node from the head of Priority Queue.",
+    "outputFormat": "The value of nodes in Priority Queue after each operation.",
+    "level": "Hard",
+    "chapter": {
+        "type": "Homework",
+        "index": "Lec13"
+    },
+    "tags": [
+        "Pointers",
+        "Struct",
+        "Union",
+        "String"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>\r\n#include <stdlib.h>\r\n#include <string.h>\r\n\r\ntypedef struct node_s {\r\n\tint weight;\r\n\tint value;\r\n\tstruct node_s *next;\r\n} node_t;\r\n\r\ntypedef struct prio_queue_s {\r\n\tnode_t *head;\r\n} prio_queue_t;\r\n\r\nvoid enqueue(prio_queue_t * const queue, int value, int weight);\r\nnode_t *dequeue(prio_queue_t * const queue);\r\nvoid print_nodes(const prio_queue_t * const queue);\r\n\r\nint main() {\r\n\tint N;\r\n\tscanf(\"%d\", &N);\r\n\tprio_queue_t queue = {\r\n\t\t.head = NULL,\r\n\t};\r\n\tfor (int i = 0; i < N; i++) {\r\n\t\tchar op[8];\r\n\t\tscanf(\"%s\", op);\r\n\t\tif (!strcmp(op, \"ENQUEUE\")) {\r\n\t\t\tint v, w;\r\n\t\t\tscanf(\"%d%d\", &v, &w);\r\n\t\t\tenqueue(&queue, v, w);\r\n\t\t}\r\n\t\telse if (!strcmp(op, \"DEQUEUE\")) {\r\n\t\t\tfree(dequeue(&queue));\r\n        }\r\n\t\tprint_nodes(&queue);\r\n\t}\r\n\treturn 0;\r\n}\r\n\r\nvoid print_nodes(const prio_queue_t *const queue) {\r\n\tif (!queue->head) {\r\n\t\tprintf(\"EMPTY\\n\");\r\n\t\treturn;\r\n\t}\r\n\tfor (node_t *node = queue->head; node; node = node->next) {\r\n\t\tprintf(\" -> %d\", node->value);\r\n    }\r\n\tprintf(\"\\n\");\r\n    return;\r\n}\r\n",
+    "templateCode": "void enqueue(prio_queue_t *const queue, int value, int weight) {\r\n\r\n}\r\n\r\nnode_t *dequeue(prio_queue_t *const queue) {\r\n\r\n}",
+    "title": "Priority Queue",
+    "date": "2022-01-19T02:46:10.889Z",
+    "samples": [
+        {
+            "inputData": "6\nDEQUEUE\nDEQUEUE\nENQUEUE 945 823\nDEQUEUE\nDEQUEUE\nENQUEUE 735 662\n",
+            "outputData": "EMPTY\nEMPTY\n -> 945\nEMPTY\nEMPTY\n -> 735\n"
+        },
+        {
+            "inputData": "7\nENQUEUE 809 389\nENQUEUE 547 199\nDEQUEUE\nENQUEUE 174 198\nENQUEUE 46 198\nDEQUEUE\nENQUEUE 98 175\n",
+            "outputData": " -> 809\n -> 547 -> 809\n -> 809\n -> 174 -> 809\n -> 174 -> 46 -> 809\n -> 46 -> 809\n -> 98 -> 46 -> 809\n"
+        },
+        {
+            "inputData": "4\nDEQUEUE\nDEQUEUE\nENQUEUE 175 517\nENQUEUE 503 350\n",
+            "outputData": "EMPTY\nEMPTY\n -> 175\n -> 503 -> 175\n"
+        },
+        {
+            "inputData": "9\nDEQUEUE\nENQUEUE 445 31\nDEQUEUE\nDEQUEUE\nENQUEUE 512 738\nENQUEUE 305 56\nENQUEUE 548 80\nENQUEUE 844 30\nDEQUEUE\n",
+            "outputData": "EMPTY\n -> 445\nEMPTY\nEMPTY\n -> 512\n -> 305 -> 512\n -> 305 -> 548 -> 512\n -> 844 -> 305 -> 548 -> 512\n -> 305 -> 548 -> 512\n"
+        }
+    ],
+    "id": "aLd_O9qjgWUQ"
+}

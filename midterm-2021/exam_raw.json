@@ -1,0 +1,11 @@
+{
+    "announcement": "<p>本試題為 2021 年（110 學期）期中考試題，考試範圍為 <strong>C Fundementals</strong> 至 <strong>Recursion</strong>，歡迎同學練習作答。</p><p>This problem set is from Midterm exam of 2021 fall semester. The scope of this exam covers all the lectures from <strong>C Fundementals</strong> to <strong>Recursion</strong>. Let's practice :D</p>",
+    "meetingUrl": "",
+    "requireVerification": false,
+    "startTime": "2022-10-28T03:30:00.000Z",
+    "dueTime": "2022-11-10T01:00:00.000Z",
+    "sections": [],
+    "type": "Exam",
+    "index": "midterm-2021",
+    "title": "Midterm 2021"
+}

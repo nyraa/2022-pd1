@@ -1,0 +1,33 @@
+{
+    "description": "<p>Please write a <code>gettoken</code> function which can isolate sequential tokens in a null-terminated string. The first argument <code>str</code> is a pointer to char which will point to the string that we want to get tokens from. The second argument <code>sep</code> is a string of separator. The first time that <code>gettoken</code> is called, <code>str</code> should be specified; subsequent calls, wishing to obtain further tokens from the same string, should pass a NULL pointer instead.</p><p><strong>strtok, strtok_r, strsep is banned in this problem</strong></p><hr><p>請寫一個 <code>gettoken</code> 函式將一個 null-terminated 字串分割為 token。第一個參數 <code>str</code> 為一個指標，指向我們想要得到 token 的字串。第二個參數 <code>sep</code> 是一個字串，其中的字元為分割字元。<code>gettoken</code> 第一次被呼叫時需給定 <code>str</code>，其後的呼叫如果要繼續在同一個字串分割 token 需傳入 NULL。</p><p><strong>本題禁用 strtok, strtok_r, strsep</strong></p>",
+    "inputFormat": "The first line contains an integer N that indicates the number of lines, followed by N lines of text, each line will be less than 4000 character\r\n第一行為一數字 N 代表總共有幾行文字，接下來有 N 行文字，每行文字會小於 4000 個字元",
+    "outputFormat": "Multiple tokens, each separated by a newline \r\n多個 token，token 之間用換行分開",
+    "level": "Medium",
+    "chapter": {
+        "type": "Exam",
+        "index": "final-2022"
+    },
+    "tags": [
+        "Pointers",
+        "String"
+    ],
+    "hint": "pointers, static/global variable",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>\r\n#include <stdlib.h>\r\n\r\nchar *strtok(char *s, const char *sep) {\r\n  printf(\"strtok banned\\n\");\r\n  exit(1);\r\n}\r\nchar *strtok_r(char *str, const char *sep, char **lasts) {\r\n  printf(\"strtok_r banned\\n\");\r\n  exit(1);\r\n}\r\n\r\nchar *strsep(char **stringp, const char *delim) {\r\n  printf(\"strsep banned\\n\");\r\n  exit(1);\r\n}\r\nchar *gettoken(char *str, const char *sep);\r\nint main() {\r\n  char buffer[4096];\r\n  char *sep = \" \\t\\n;,.?!\";\r\n  char *word;\r\n  int N;\r\n  scanf(\"%d\\n\", &N);\r\n  for (int i = 0; i < N; i++) {\r\n    fgets(buffer, 4095, stdin);\r\n    for (word = gettoken(buffer, sep); word != NULL;\r\n         word = gettoken(NULL, sep)) {\r\n      printf(\"%s\\n\", word);\r\n    }\r\n  }\r\n}\r\n",
+    "templateCode": "char *gettoken(char *str, const char *sep){\r\n\r\n}",
+    "title": "[20 Points] gettoken",
+    "date": "2022-12-28T13:16:14.332Z",
+    "samples": [
+        {
+            "inputData": "1\nC makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows your whole leg off.\n",
+            "outputData": "C\nmakes\nit\neasy\nto\nshoot\nyourself\nin\nthe\nfoot\nC++\nmakes\nit\nharder\nbut\nwhen\nyou\ndo\nit\nblows\nyour\nwhole\nleg\noff\n"
+        },
+        {
+            "inputData": "2\nWhen I wrote this code, only God and I understood what I did. Now... only God knows.\nC programmers never die. They are just cast into void.\n",
+            "outputData": "When\nI\nwrote\nthis\ncode\nonly\nGod\nand\nI\nunderstood\nwhat\nI\ndid\nNow\nonly\nGod\nknows\nC\nprogrammers\nnever\ndie\nThey\nare\njust\ncast\ninto\nvoid\n"
+        }
+    ],
+    "id": "MvfeA2m8uw2V"
+}

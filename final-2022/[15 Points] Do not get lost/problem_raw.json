@@ -1,0 +1,43 @@
+{
+    "description": "<p>Zoro has got a treasure map which tells the place of a legendary sword was hidden. But Zoro has poor sense of direction that makes him gets lost easily. Luckily, There is a map app in his PDA that can digitalize treasure maps and provide a path to the treasure, thus, Zoro could move along the instruction given by the PDA. But the app is non-functional due to missing required library. Please help Zoro fix the issue.</p><p>There are three functions should be implemented:</p><ul><li><p><code>init_node()</code>: Init the given node with provided id and paths start from the node.</p></li><li><p><code>step_to_next()</code> : Step from the <code>curr</code> node to the next node along the <code>next_idx</code>th path of the node.</p></li><li><p><code>deinit_node()</code>: Free the allocated space of given node.</p></li></ul><p><img src=\"https://thumbs.gfycat.com/AdoredPerfectHousefly-size_restricted.gif\"></p><hr><p>索隆得到了一張藏寶圖，上面標示出了一把傳說中的武士刀所在的位置。 但是索隆的方向感很差，很容易迷路。 幸運的是，他的掌上電腦上有一個地圖應用程式可以數位化藏寶圖並提供通往寶藏的路徑，這樣索隆就可以按照掌上電腦給出的指令移動。但是由於缺少所需的函式庫，該應用程式無法正常運行。 請幫助索隆解決這個問題。</p><p>請幫索隆實作以下三個功能：</p><ul><li><p><code>init_node()</code>: 使用提供的 id 和路徑初始化給定節點。</p></li><li><p><code>step_to_next()</code>：從 <code>curr</code> 節點沿著第 <code>next_idx</code> 條路徑到下一個節點。</p></li><li><p><code>deinit_node()</code>: 釋放給定節點使用到的空間。</p></li></ul>",
+    "inputFormat": "First line contains an integer N that indicates the number of nodes of the map.\r\nThe next N lines have the information of the nodes, each line is in the format \"id pidx_1 ... pidx_n -1\" where \"id\" is the name of the node, followed by a negative-one-terminated list of integers that means there is a path between the current node and the \"pidx_i\"th node.\r\nNext line contains an integer S indicates the index of the start node.\r\nThe last line is a negative-one-terminated list of integers where the ith integer means that the ith path of the current node is the correct one.\r\n\r\n第一行為一個整數 N，代表地圖的節點數。\r\n接下來的 N 行包含節點的訊息，每行的格式為 “ID pidx_1 ... pidx_n -1”，其中 ID 是節點的名稱，之後為一個負一結尾的整數數列，其中 pidx_i 代表當前節點與第 i 個節點間存在路徑。\r\n下一行包含一個整數 S 表示起始節點的索引。\r\n最後一行是一個負一結尾的整數數列，其中第 i 個整數表示當前節點的第 i 個路徑是正確的。",
+    "outputFormat": "ID of each node along the path, each ID occupies a line.\r\n\r\n經過的每個節點的 ID，每個 ID 佔一行。",
+    "level": "Hard",
+    "chapter": {
+        "type": "Exam",
+        "index": "final-2022"
+    },
+    "tags": [
+        "Function",
+        "Pointers",
+        "Struct",
+        "Malloc"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include <stdio.h>                             \r\n#include <stdlib.h>                                                                           \r\n#include <string.h>  \r\n                                               \r\n#define MAX_ID_LEN 32                       \r\n#define MAX_PATH_CNT 16\r\n                                               \r\ntypedef struct node_s {\r\n    char *id;                                  \r\n    struct node_s **paths;   \r\n} node_t;                                                                                     \r\n                                               \r\ntypedef struct map_s {\r\n    unsigned node_cnt;           \r\n    node_t *nodes;                                                                            \r\n} map_t;                               \r\n\r\nmap_t *build_map();             \r\nvoid destroy_map(map_t *map);                                                                 \r\nvoid init_node(node_t *node, const char *id, node_t *paths[]);\r\nvoid deinit_node(node_t *node);\r\nnode_t *step_to_next(node_t *curr, int next_idx);\r\n                                               \r\nint main()                                                                                    \r\n{                                              \r\n    map_t *map = build_map();\r\n\r\n    int start_idx;\r\n    scanf(\"%d\", &start_idx);\r\n\r\n    node_t *curr = &map->nodes[start_idx];\r\n    while (curr) {\r\n        int next_idx;\r\n        scanf(\"%d\", &next_idx);\r\n        curr = step_to_next(curr, next_idx);\r\n    }\r\n\r\n    destroy_map(map);\r\n   \r\n    return 0;\r\n}\r\n\r\n\r\nmap_t *build_map()\r\n{\r\n    map_t *map = malloc(sizeof(map_t));\r\n\r\n    scanf(\"%d\", &map->node_cnt);\r\n    map->nodes = malloc(sizeof(node_t) * map->node_cnt);\r\n\r\n    int max = 0;\r\n    for (int i = 0; i < map->node_cnt; i++) {\r\n        char id[MAX_ID_LEN + 1];\r\n        node_t *paths[MAX_PATH_CNT + 1];\r\n\r\n        scanf(\"%s\", id);\r\n\r\n        int curr_idx = 0, path_idx;\r\n        while (scanf(\"%d\", &path_idx), path_idx != -1) {\r\n            paths[curr_idx++] = &map->nodes[path_idx];\r\n        }\r\n\r\n        paths[curr_idx] = NULL;\r\n\r\n        init_node(&map->nodes[i], id, paths);\r\n    }\r\n\r\n    return map;\r\n}\r\n\r\nvoid destroy_map(map_t *map)\r\n{\r\n    for (int i = 0; i < map->node_cnt; i++)\r\n        deinit_node(&map->nodes[i]);\r\n\r\n    free(map->nodes);\r\n    free(map);\r\n}",
+    "templateCode": "void init_node(node_t *node, const char *id, node_t *paths[])\r\n{\r\n\r\n}\r\n\r\nvoid deinit_node(node_t *node)\r\n{\r\n\r\n}\r\n\r\nnode_t *step_to_next(node_t *curr, int next_idx)\r\n{\r\n\r\n}",
+    "title": "[15 Points] Do not get lost",
+    "date": "2022-12-26T06:34:10.671Z",
+    "samples": [
+        {
+            "inputData": "9\nLaibin 3 4 6 8 1 -1\nGuayaquil 2 5 3 8 7 -1\nKaifeng-Chengguanzhen 8 1 3 0 4 7 6 -1\nMexico-City 0 -1\nXianyang 1 -1\nMalang 2 3 4 0 1 8 7 6 -1\nYingchuan 7 2 -1\nSale 4 5 8 1 2 3 0 -1\nLibreville 7 2 3 5 6 1 0 4 -1\n3\n0 0 0 0 0 3 4 1 -1\n",
+            "outputData": "Mexico-City\nLaibin\nMexico-City\nLaibin\nMexico-City\nLaibin\nLibreville\nYingchuan\nKaifeng-Chengguanzhen\n"
+        },
+        {
+            "inputData": "5\nYibin 1 2 -1\nCiudad-Guayana 3 0 -1\nVaranasi 3 0 -1\nJamestown 1 4 0 2 -1\nHejian 3 -1\n2\n0 0 1 1 -1\n",
+            "outputData": "Varanasi\nJamestown\nCiudad-Guayana\nYibin\nVaranasi\n"
+        },
+        {
+            "inputData": "7\nDazhou 1 2 4 3 6 -1\nDingxi 2 4 -1\nBangalore 5 6 4 0 1 -1\nShiyan 5 2 4 6 0 1 -1\nYuci 2 0 -1\nBangui 1 3 -1\nLaibin 0 3 -1\n4\n1 2 0 3 1 -1\n",
+            "outputData": "Yuci\nDazhou\nYuci\nBangalore\nDazhou\nBangalore\n"
+        },
+        {
+            "inputData": "6\nJoao-Pessoa 3 5 -1\nRome 0 2 4 -1\nGiza 0 1 4 5 3 -1\nCairo 4 5 0 1 -1\nYulinshi 0 1 -1\nGuiping 4 0 2 3 -1\n1\n0 1 -1\n",
+            "outputData": "Rome\nJoao-Pessoa\nGuiping\n"
+        }
+    ],
+    "id": "pSA9q4OlneFW"
+}

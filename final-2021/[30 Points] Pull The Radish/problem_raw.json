@@ -1,0 +1,33 @@
+{
+    "description": "<p>在開心農場裡，Ariel 種了 <code>N</code> 根蘿蔔，每個蘿蔔的間距為一公尺，今天是收成的日子，但 Ariel 不想要一次拔光所有蘿蔔，所以他決定以自己為起點 (起點為 <code>y</code>)，分別向左和向右，每隔 <code>x</code> 公尺就拔一根蘿蔔，請輸出 Ariel 今天總共收成了幾根蘿蔔，並告訴他現在農場的情況。<br><br><code>farm[N]</code> 表示農場狀況，若 <code>farm[i]</code> 為 1 ，表示在 index 為 <code>i</code> 時，有種一根蘿蔔 ; 若 <code>farm[i]</code> 為 0 ，表示在 index 為 <code>i</code> 時，沒有種蘿蔔。( index <code>i</code> 與 <code>i+1</code> 之間表示間隔為一公尺)</p><p><strong>Notice</strong>: 請完成 <code>pull_radish</code> 函式，並回傳總共拔了幾個蘿蔔，注意參數是什麼 !</p><hr><p>In happy farm, Ariel planted <code>N</code> radishes. The radishes  are spaced at one-meter intervals.  It is time to harvest, but Ariel doesn't want to pull all radishes. Therefore, she deicides to start with herself (starting point is <code>y</code>), and pulls radishes every <code>x</code> meters to left and right, respectively. Please output how many radishes Ariel pulls and the situation of farm.</p><p><code>farm[N]</code> represents the situation of farm. If <code>farm[i]</code> is 1, that means there is a radish at index <code>i</code> ;  If <code>farm[i]</code> is 0, that means there isn't a radish at index <code>i</code>.</p><p><strong>Notice</strong>: Please finish <code>pull_radish</code> function, and return the number of radishes that Ariel pulls. Pay attention to the parameter!</p>",
+    "inputFormat": "There are three number, integer N , y and x, represent the number of radishes, Ariel's position and the interval.\r\n\r\n",
+    "outputFormat": "Output the total of radishes which Ariel pulled and the array farm[N] ",
+    "level": "Easy",
+    "chapter": {
+        "type": "Exam",
+        "index": "final-2021"
+    },
+    "tags": [
+        "Array",
+        "Pointers"
+    ],
+    "hint": "",
+    "timeLimit": 1,
+    "memLimit": 5000,
+    "coinReward": 0,
+    "loaderCode": "#include<stdio.h>\r\n#include<stdlib.h>\r\n\r\nint pull_radish(int *l, int *r, int *pos, int x);\r\n\r\nint main() {\r\n    int N, y, x;\r\n    scanf(\"%d %d %d\", &N, &y, &x);\r\n    int *farm = malloc(N * sizeof(int));\r\n\r\n    // initialize farm[N]\r\n    for(int i=0; i<N; i++) {\r\n        farm[i] = 1;\r\n    }\r\n\r\n    int total = pull_radish(&farm[0], &farm[N-1], &farm[y], x);\r\n    printf(\"%d\\n\", total);\r\n    for(int i=0; i<N; i++) {\r\n        printf(\"%d \", farm[i]);\r\n    }\r\n\r\n    return 0;\r\n}",
+    "templateCode": "// l represents the first radish to the left 左邊第一個\r\n// r represents the first radish to the right 右邊第一個\r\n// pos represents Ariel's position\r\n// x represents the interval\r\nint pull_radish(int *l, int *r, int *pos, int x) {\r\n\r\n}",
+    "title": "[30 Points] Pull The Radish",
+    "date": "2022-01-06T06:30:12.061Z",
+    "samples": [
+        {
+            "inputData": "8 2 2\n",
+            "outputData": "3\n0 1 1 1 0 1 0 1 "
+        },
+        {
+            "inputData": "15 14 5\n",
+            "outputData": "2\n1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 "
+        }
+    ],
+    "id": "5ud0J7k76WZx"
+}

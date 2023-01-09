@@ -1,0 +1,14 @@
+{
+    "review": "<h2><strong>11.4 Unions</strong></h2><ul><li><p>A union consists of members <strong>with possibly different types</strong>.</p></li><li><p>Unlike structure, compiler allocates only enough space for the largest member, which overlay with other members.</p></li><li><p>Structure <code>s</code> and union <code>u</code> differ in just one way.</p><ul><li><p>The members of <code>s</code> are stored at <strong>different</strong> addresses in memory.</p></li><li><p>The members of <code>u</code> are stored at <strong>the same</strong> address. Only one member can be initialized, but it doesn’t have to be the first one.</p></li></ul></li><li><p>A designated initializer allows us to specify which member of a union should be initialized:</p><pre><code>union {\n    int i;\n    double d;\n} u = {.d = 10.0};</code></pre></li><li><p>Only one member can be initialized, but it doesn’t have to be the first one.</p></li></ul><h2><strong>11.5 Enumerations</strong></h2><ul><li><p>An enumerated type is a type whose values are listed (enumerated) by the programmer.</p></li><li><p>Each value must have a name (an <strong>enumeration constant</strong>).</p><pre><code>enum suit {CLUBS, DIAMONDS, HEARTS, SPADES};\nenum suit s1, s2;</code></pre></li><li><p>C treats enumeration variables and constants as <strong>integers</strong>, and the values may be arbitrary integers with no particular order.</p><pre><code>enum EGA_colors {BLACK, LT_GRAY = 7, DK_GRAY, WHITE = 15};</code></pre></li></ul>",
+    "videoUrl": "https://www.youtube.com/embed/0yh9_8n84WE,https://www.youtube.com/embed/r-151uzalZI,https://www.youtube.com/embed/8N9kHDkkseM",
+    "makeUpTime": "2022-12-21T16:00:00.000Z",
+    "notification": {
+        "makeUpTime": "kHECptKm4rDMjrINCl6G"
+    },
+    "startTime": "2022-12-07T16:00:00.000Z",
+    "dueTime": "2022-12-28T16:00:00.000Z",
+    "sections": [],
+    "type": "Homework",
+    "index": "Lec11-2",
+    "title": "Structures Unions and Enumerations(part 2)"
+}
