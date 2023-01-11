@@ -100,6 +100,13 @@
     - [[25 Points] Order Recovery](/final-2021/%5B25%20Points%5D%20Order%20Recovery)
     - [[30 Points] Magic Bug](/final-2021/%5B30%20Points%5D%20Magic%20Bug)
     - [[20 Points] String Combination](/final-2021/%5B20%20Points%5D%20String%20Combination)
+  - [final-2022 - final-2022](/final-2022)
+    - [[15 Points] Stock Trading](/final-2022/%5B15%20Points%5D%20Stock%20Trading)
+    - [[20 Points] URL Search Parameter Parser](/final-2022/%5B20%20Points%5D%20URL%20Search%20Parameter%20Parser)
+    - [[15 Points] Do not get lost](/final-2022/%5B15%20Points%5D%20Do%20not%20get%20lost)
+    - [[20 Points] gettoken](/final-2022/%5B20%20Points%5D%20gettoken)
+    - [[25 Points] 護照英文姓名 Passport English Name](/final-2022/%5B25%20Points%5D%20%E8%AD%B7%E7%85%A7%E8%8B%B1%E6%96%87%E5%A7%93%E5%90%8D%20Passport%20English%20Name)
+    - [[25 Points] Predict Mudslides](/final-2022/%5B25%20Points%5D%20Predict%20Mudslides)
 - Misc
   - [misc - Problem without chapter](/misc)
     - [MT - Matrix multiplication](/misc/MT%20-%20Matrix%20multiplication)
