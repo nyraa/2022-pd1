@@ -3,7 +3,7 @@ void MoveToTail()
     struct node *max = head, *max_prev = NULL;
     for(struct node *curr = head, *prev = NULL; curr != NULL; prev = curr, curr = curr->next)
     {
-		if(curr->val > max->val)
+        if(curr->val > max->val)
         {
             max = curr;
             max_prev = prev;

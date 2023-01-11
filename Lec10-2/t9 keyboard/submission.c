@@ -1,7 +1,7 @@
 void convert(char *arr[], int count)
 {
     char *keyboard[] = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-	for(int i = 0; i < count; ++i)
+    for(int i = 0; i < count; ++i)
     {
         char *c = arr[i];
         char buffer[BUFFER_LEN] = {0};

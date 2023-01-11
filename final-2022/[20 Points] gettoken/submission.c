@@ -1,7 +1,7 @@
 #include <string.h>
 char *gettoken(char *str, const char *sep)
 {
-	static char *start;
+    static char *start;
     if(str) start = str;
     if(*start == '\0') return NULL;
     char *p = start;

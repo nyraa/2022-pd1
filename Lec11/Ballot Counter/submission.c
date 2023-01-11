@@ -1,6 +1,6 @@
 void count(const char *name)
 {
-	for(int i = 0; i < cand_cnt; ++i)
+    for(int i = 0; i < cand_cnt; ++i)
     {
         if(!strcmp(name, counter[i].name)) ++counter[i].count;
     }
@@ -8,7 +8,7 @@ void count(const char *name)
 
 const char *winner()
 {
-	int max_index = -1, cand_index;
+    int max_index = -1, cand_index;
     for(int i = 0; i < cand_cnt; ++i)
     {
         if(counter[i].count > max_index)

@@ -1,6 +1,6 @@
 void sort_section(int *ptr, int *qtr)
 {
-	if(ptr > qtr)
+    if(ptr > qtr)
     {
         int* tmp = ptr;
         ptr = qtr;

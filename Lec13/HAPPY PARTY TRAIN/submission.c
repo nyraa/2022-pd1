@@ -1,5 +1,5 @@
 int fire(struct Car *head) {
-	struct Car *curr = head;
+    struct Car *curr = head;
     int burned = 0;
     int running_passenger = 0;
     while(curr = curr->next)

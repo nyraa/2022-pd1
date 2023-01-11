@@ -1,5 +1,5 @@
 void solve(int *A, int *B, int *op_cnt){
-	for(int i = 0; i < N; ++i)
+    for(int i = 0; i < N; ++i)
     {
         if(A[i] < B[i])
         {

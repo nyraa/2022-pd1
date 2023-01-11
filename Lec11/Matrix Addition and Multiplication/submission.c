@@ -11,7 +11,7 @@ void add_mat(const struct mat *m1_p, const struct mat *m2_p, struct mat *result_
 }
 
 void mul_mat(const struct mat *m1_p, const struct mat *m2_p, struct mat *result_p) { // matrix multiplication
-	result_p->row = m1_p->row;
+    result_p->row = m1_p->row;
     result_p->col = m2_p->col;
     memset(&result_p->value, 0, sizeof(int)*SIZE*SIZE);
     for(int i = 0; i < m1_p->row; ++i)
